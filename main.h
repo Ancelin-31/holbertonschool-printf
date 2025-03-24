@@ -12,10 +12,10 @@ typedef struct function
 } function_t;
 
 void _putchar(char);
-void printchar(va_list args);
-void printpercent(va_list args);
-void printstring(va_list args);
-void printint(va_list args);
-void printdecimal(va_list args);
+int printchar(va_list args);
+int printpercent(va_list args);
+int printstring(va_list args);
+int printint(va_list args);
+int printdecimal(va_list args);
 
 #endif
