@@ -11,6 +11,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int i = 0, j;
+	int lenght = 0;
 	function_t function[] = {
 		{'c', printchar},
 		{'s', printstring},
@@ -22,22 +23,25 @@ int _printf(const char *format, ...)
 	while (format && format[i])
 	{
 		j = 0;
-		if (format[i] == '%' && format[i + 1])
+		if (format[i] == '%')
 		{
 			i++;
+			lenght++;
 			while (function[j].id)
 			{
 				if (format[i] == function[j].id)
 				{
-					function[j].fptr(args);
+					lenght += function[j].fptr(args);
 					break;
 				}
-			j++;
+				j++;
 			}
+			i++;
+			lenght++;
 		}
 		_putchar(format[i]);
 		i++;
 	}
 	va_end(args);
-	return (i);
+	return (lenght);
 }
