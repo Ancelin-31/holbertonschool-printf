@@ -11,7 +11,7 @@ typedef struct function
 	void (*fptr)(va_list *args);
 } function_t;
 
-void _putchar(char);
+int _putchar(char c);
 int printchar(va_list args);
 int printpercent(va_list args);
 int printstring(va_list args);
