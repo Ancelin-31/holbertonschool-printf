@@ -2,30 +2,18 @@
 #include <stdarg.h>
 
 /**
-<<<<<<< HEAD
- *printf - print all with specifier
-=======
  *_printf - Basic functions of printf
->>>>>>> Jeff
  *@format: use to keep type of variable to print
  *Return: 0 if success
  */
 
-<<<<<<< HEAD
-int _printf(const char * const format, ...)
-{
-	va_list args;
-	int i = 0, j;
-	op_t function[] = {
-		{'c',printchar},
-=======
 int _printf(const char *format, ...)
 {
 	va_list args;
 	int i = 0, j;
+	int lenght = 0;
 	function_t function[] = {
 		{'c', printchar},
->>>>>>> Jeff
 		{'s', printstring},
 		{'%', printpercent},
 		{'\0', NULL}
@@ -35,37 +23,25 @@ int _printf(const char *format, ...)
 	while (format && format[i])
 	{
 		j = 0;
-		if (format[i] == '%' && format[i + 1])
-<<<<<<< HEAD
-		while (function[j].id)
-		{
-			if (format[i] == function[j].id)
-			{
-				function[j].fptr(args);
-				break;
-			}
-			j++;
-		}
-		i++;
-	}
-	va_end(args);
-=======
+		if (format[i] == '%')
 		{
 			i++;
+			lenght++;
 			while (function[j].id)
 			{
 				if (format[i] == function[j].id)
 				{
-					function[j].fptr(args);
+					lenght += function[j].fptr(args);
 					break;
 				}
-			j++;
+				j++;
 			}
+			i++;
+			lenght++;
 		}
 		_putchar(format[i]);
 		i++;
 	}
 	va_end(args);
-	return (i);
->>>>>>> Jeff
+	return (lenght);
 }
