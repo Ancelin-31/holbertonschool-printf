@@ -1,4 +1,4 @@
-#include "variadic_functions.h"
+#include "main.h"
 #include <stdarg.h>
 
 /**
@@ -27,16 +27,17 @@ int _printf(const char *format, ...)
 			i++;
 			while (function[j].id)
 			{
-			if (format[i] == function[j].id)
-			{
-				function[j].fptr(args);
-				break;
-			}
+				if (format[i] == function[j].id)
+				{
+					function[j].fptr(args);
+					break;
+				}
 			j++;
 			}
 		}
-		_putchar(format[i])
+		_putchar(format[i]);
 		i++;
 	}
 	va_end(args);
+	return (i);
 }
