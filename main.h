@@ -8,14 +8,15 @@
 typedef struct function
 {
 	char id;
-	void (*fptr)(va_list *args);
+	int (*fptr)(va_list args);
 } function_t;
 
 int _putchar(char c);
 int printchar(va_list args);
-int printpercent(va_list args);
+int printpercent();
 int printstring(va_list args);
 int printint(va_list args);
 int printdecimal(va_list args);
+int _printf(const char *format, ...);
 
 #endif
