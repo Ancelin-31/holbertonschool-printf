@@ -36,7 +36,7 @@ int printstring(va_list args)
 		}
 		return (lenght);
 	}
-	return ('\0');
+	return (0);
 }
 
 /**
