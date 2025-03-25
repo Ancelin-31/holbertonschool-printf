@@ -42,14 +42,15 @@ int _printf(const char *format, ...)
 				}
 				j++;
 			}
+			if (format[i] != function[j].id)
+			{
+				lenght--;
+			}
 			i++;
 		}
-		else
-		{
-			_putchar(format[i]);
-			i++;
-			lenght++;
-		}
+		_putchar(format[i]);
+		i++;
+		lenght++;
 	}
 	va_end(args);
 	return (lenght);
