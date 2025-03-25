@@ -27,12 +27,12 @@ int _printf(const char *format, ...)
 		j = 0;
 		if (format[i] == '%')
 		{
-			i++;
-			if (format[i] == '\0')
+			if (format[i + 1] == '\0')
 			{
 				lenght--;
 				break;
 			}
+			i++;
 			while (function[j].id)
 			{
 				if (format[i] == function[j].id)
