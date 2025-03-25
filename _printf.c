@@ -4,7 +4,7 @@
 /**
  *_printf - Basic functions of printf
  *@format: use to keep type of variable to print
- *Return: 0 if success, 1 if error
+ *Return: 0 if success
  */
 
 int _printf(const char *format, ...)
@@ -12,7 +12,6 @@ int _printf(const char *format, ...)
 	va_list args;
 	int i = 0, j;
 	int lenght = 0;
-	int boolet = 0;
 	function_t function[] = {
 		{'c', printchar},
 		{'s', printstring},
@@ -23,34 +22,21 @@ int _printf(const char *format, ...)
 	};
 
 	va_start(args, format);
-	while (format[i] != '\0')
+	while (format && format[i])
 	{
 		j = 0;
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == '\0')
-			{
-				lenght--;
-				break;
-			}
-			i++;
 			while (function[j].id)
 			{
-				if (format[i] == function[j].id)
+				if (format[i + 1] == function[j].id)
 				{
 					lenght += function[j].fptr(args);
-					boolet = 1;
+					i += 2;
 					break;
 				}
 				j++;
 			}
-			if (boolet == 0)
-			{
-				_putchar(format[i - 1]);
-				_putchar(format[i]);
-			}
-			boolet = 0;
-			i++;
 		}
 		_putchar(format[i]);
 		i++;
