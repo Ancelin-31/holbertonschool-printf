@@ -32,7 +32,6 @@ int printstring(va_list args)
 		_putchar(*str++);
 		lenght++;
 	}
-	lenght--;
 	return (lenght);
 }
 
