@@ -28,7 +28,6 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			lenght++;
 			while (function[j].id)
 			{
 				if (format[i] == function[j].id)
@@ -39,10 +38,10 @@ int _printf(const char *format, ...)
 				j++;
 			}
 			i++;
-			lenght++;
 		}
 		_putchar(format[i]);
 		i++;
+		lenght++;
 	}
 	va_end(args);
 	return (lenght);
