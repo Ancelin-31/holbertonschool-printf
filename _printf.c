@@ -25,9 +25,14 @@ int _printf(const char *format, ...)
 	while (format[i] != '\0')
 	{
 		j = 0;
-		if (format[i] == '%' && format[i + 1] != '\0')
+		if (format[i] == '%')
 		{
 			i++;
+			if (format[i] == '\0')
+			{
+				lenght--;
+				break;
+			}
 			while (function[j].id)
 			{
 				if (format[i] == function[j].id)
