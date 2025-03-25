@@ -20,13 +20,17 @@ int _printf(const char *format, ...)
 		{'d', printint},
 		{'\0', NULL}
 	};
+	if (format == NULL)
+		return (-1);
 
 	va_start(args, format);
-	while (format && format[i])
+	while (format[i])
 	{
-		j = 0;
 		if (format[i] == '%')
 		{
+			if (format[i + 1] == '\0')
+				return (-1);
+			j = 0;
 			while (function[j].id)
 			{
 				if (format[i + 1] == function[j].id)
@@ -37,10 +41,20 @@ int _printf(const char *format, ...)
 				}
 				j++;
 			}
+			if (function[j].id == '\0')
+			{
+				_putchar(format[i]);
+				_putchar(format[i + 1]);
+				lenght += 2;
+				i += 2;
+			}
 		}
-		_putchar(format[i]);
-		i++;
-		lenght++;
+		else
+		{
+			_putchar(format[i]);
+			i++;
+			lenght++;
+		}
 	}
 	va_end(args);
 	return (lenght);
