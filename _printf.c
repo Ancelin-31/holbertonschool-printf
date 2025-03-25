@@ -12,6 +12,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	int i = 0, j;
 	int lenght = 0;
+	int boolet = 0;
 	function_t function[] = {
 		{'c', printchar},
 		{'s', printstring},
@@ -38,14 +39,17 @@ int _printf(const char *format, ...)
 				if (format[i] == function[j].id)
 				{
 					lenght += function[j].fptr(args);
+					boolet = 1;
 					break;
 				}
 				j++;
 			}
-			if (format[i] != function[j].id)
+			if (boolet == 0)
 			{
-				lenght--;
+				_putchar(format[i - 1]);
+				_putchar(format[i]);
 			}
+			boolet = 0;
 			i++;
 		}
 		_putchar(format[i]);
