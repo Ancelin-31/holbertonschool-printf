@@ -5,6 +5,12 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
+/**
+ * struct function - searches right type of function
+ * based on on an identifier, then execute it
+ * @id: character defining function
+ * @fptr: pointed function associated with id
+ */
 typedef struct function
 {
 	char id;
