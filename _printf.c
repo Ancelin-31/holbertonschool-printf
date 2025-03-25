@@ -10,19 +10,13 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i = 0, j;
-	int lenght = 0;
+	int i = 0, j, lenght = 0;
 	function_t function[] = {
-		{'c', printchar},
-		{'s', printstring},
-		{'%', printpercent},
-		{'i', printint},
-		{'d', printint},
-		{'\0', NULL}
+		{'c', printchar}, {'s', printstring}, {'%', printpercent},
+		{'i', printint}, {'d', printint}, {'\0', NULL}
 	};
 	if (format == NULL)
 		return (-1);
-
 	va_start(args, format);
 	while (format[i])
 	{
@@ -43,17 +37,13 @@ int _printf(const char *format, ...)
 			}
 			if (function[j].id == '\0')
 			{
-				_putchar(format[i]);
-				_putchar(format[i + 1]);
-				lenght += 2;
-				i += 2;
+				_putchar(format[i]), _putchar(format[i + 1]);
+				lenght += 2, i += 2;
 			}
 		}
 		else
 		{
-			_putchar(format[i]);
-			i++;
-			lenght++;
+			_putchar(format[i]), i++, lenght++;
 		}
 	}
 	va_end(args);
