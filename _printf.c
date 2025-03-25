@@ -4,7 +4,7 @@
 /**
  *_printf - Basic functions of printf
  *@format: use to keep type of variable to print
- *Return: 0 if success
+ *Return: 0 if success, 1 if error
  */
 
 int _printf(const char *format, ...)
@@ -20,6 +20,9 @@ int _printf(const char *format, ...)
 		{'d', printint},
 		{'\0', NULL}
 	};
+
+	if (format == NULL)
+		return (1);
 
 	va_start(args, format);
 	while (format && format[i])
