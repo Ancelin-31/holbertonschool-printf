@@ -27,17 +27,16 @@ int _printf(const char *format, ...)
 		j = 0;
 		if (format[i] == '%')
 		{
-			i++;
 			while (function[j].id)
 			{
-				if (format[i] == function[j].id)
+				if (format[i + 1] == function[j].id)
 				{
 					lenght += function[j].fptr(args);
+					i += 2;
 					break;
 				}
 				j++;
 			}
-			i++;
 		}
 		_putchar(format[i]);
 		i++;
