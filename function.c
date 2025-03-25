@@ -34,8 +34,9 @@ int printstring(va_list args)
 			_putchar(*str++);
 			lenght++;
 		}
+		return (lenght);
 	}
-	return (lenght);
+	return ('\0');
 }
 
 /**
