@@ -58,35 +58,29 @@ int printpercent(__attribute__((unused))va_list args)
 int printint(va_list args)
 {
 	int num = va_arg(args, int);
+	unsigned int abs;	/* to handle INT_MIN */
 	int length = 0, i = 0;
-	char digit[12];
+	char digit[11];
 
-	if (num == 0)
+	if (num < 0)
 	{
+		_putchar('-');
 		length++;
-		_putchar(num);
-		_putchar(num);
+		abs =  num * -1;
 	}
 	else
-	{
-		if (num < 0)
-		{
-			_putchar('-');
-			length++;
-			num *= -1;
-		}
-		while (num > 0)
-		{
-			digit[i] = num % 10 + 48;
-			num /= 10;
-			i++;
-			length++;
-		}
+		abs = num;
 
-		while (i--)
-		{
-			_putchar(digit[i]);
-		}
+	while (abs > 0)
+	{
+		digit[i] = abs % 10 + 48;
+		abs /= 10;
+		i++;
+		length++;
+	}
+	while (i--)
+	{
+		_putchar(digit[i]);
 	}
 	return (length);
 }
