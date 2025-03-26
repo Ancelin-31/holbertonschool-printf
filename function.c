@@ -19,22 +19,22 @@ int printchar(va_list args)
 /**
  *printstring - print if char * is called
  *@args: to fetch arg in parameter
- *Return: lenght of string
+ *Return: length of string
 */
 
 int printstring(va_list args)
 {
 	char *str = va_arg(args, char *);
-	int lenght = 0;
+	int length = 0;
 
 	if (str == NULL)
 		str = "(null)";
 	while (*str)
 	{
 		_putchar(*str++);
-		lenght++;
+		length++;
 	}
-	return (lenght);
+	return (length);
 }
 
 /**
@@ -58,13 +58,13 @@ int printpercent(__attribute__((unused))va_list args)
 int printint(va_list args)
 {
 	int num = va_arg(args, int);
-	int lenght = 0, i = 0;
-	char digit[11];
+	int length = 0, i = 0;
+	char digit[12];
 
 	if (num < 0)
 	{
 		_putchar('-');
-		lenght++;
+		length++;
 		num *= -1;
 	}
 	while (num > 0)
@@ -72,12 +72,12 @@ int printint(va_list args)
 		digit[i] = num % 10 + 48;
 		num /= 10;
 		i++;
-		lenght++;
+		length++;
 	}
 
 	while (i--)
 	{
 		_putchar(digit[i]);
 	}
-	return (lenght);
+	return (length);
 }
