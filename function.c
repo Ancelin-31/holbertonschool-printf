@@ -65,6 +65,7 @@ int printint(va_list args)
 	{
 		length++;
 		_putchar(num);
+		_putchar(num);
 	}
 	else
 	{
