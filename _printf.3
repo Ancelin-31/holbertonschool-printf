@@ -1,0 +1,65 @@
+.TH _PRINTF 3 "Holberton School project" "March 2025"
+
+.SH NAME
+_printf
+
+.SH SYNOPSIS
+.B #include "main.h"
+.br
+.B int _printf(const char *format, ...);
+
+.SH DESCRIPTION
+.BR _printf
+is a simplified version of standard printf function.
+.br
+It formats and prints according a set of conversion specifiers an return the number of bytes printed.
+
+Supported specifiers :
+
+.TP
+.B %c
+Print a character.
+
+.TP
+.B %s
+Print a string.
+
+.TP
+.B %d, %i
+Print a number.
+
+.TP
+.B %%
+Print a %.
+
+.SH EXEMPLE
+.EX
+#include "main.h"
+
+Int main(void)
+{
+	char name[] = "Ancelin";
+	int age = 31;
+	
+	/* Exemple to print a string */
+	_printf("Hello ! We are %s and %s.\n", name, 'Jeffrey');
+
+	/* Exemple to print a number */
+	_printf("We are respectively %d and %i.\n", age, 37);
+
+	/* Exemple to print a character and % */
+	_printf("We are %c%c-developer and we are at 200%%", 'C', 'o')
+
+	return (0);
+}
+.EE
+
+.SH AUTHORS
+Projet: Holberton School _printf.
+.br
+Authors: written by Ancelin and Jeffrey.
+.br
+GitHub:	https://github.com/Ancelin-31/holbertonschool-printf
+.br
+Thanck you !
+

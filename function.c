@@ -27,12 +27,13 @@ int printstring(va_list args)
 	char *str = va_arg(args, char *);
 	int lenght = 0;
 
+	if (str == NULL)
+		str = "(null)";
 	while (*str)
 	{
 		_putchar(*str++);
 		lenght++;
 	}
-	lenght--;
 	return (lenght);
 }
 
