@@ -61,6 +61,8 @@ int printint(va_list args)
 	int length = 0, i = 0;
 	char digit[12];
 
+	if (num == 0)
+		return (length);
 	if (num < 0)
 	{
 		_putchar('-');
