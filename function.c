@@ -63,7 +63,7 @@ int printint(va_list args)
 
 	if (num == 0)
 	{
-		length = 0;
+		length++;
 		_putchar(num);
 	}
 	else
