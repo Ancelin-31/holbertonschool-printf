@@ -60,8 +60,14 @@ int printint(va_list args)
 	int num = va_arg(args, int);
 	unsigned int abs;	/* to handle INT_MIN */
 	int length = 0, i = 0;
-	char digit[11];
-
+	char digit[10];
+	
+	if (num == 0)
+	{
+		_putchar(48);
+		length++;
+		return (length);
+	}
 	if (num < 0)
 	{
 		_putchar('-');
