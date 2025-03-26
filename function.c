@@ -62,24 +62,30 @@ int printint(va_list args)
 	char digit[12];
 
 	if (num == 0)
-		return (length);
-	if (num < 0)
 	{
-		_putchar('-');
-		length++;
-		num *= -1;
+		length = 0;
+		_putchar(num);
 	}
-	while (num > 0)
+	else
 	{
-		digit[i] = num % 10 + 48;
-		num /= 10;
-		i++;
-		length++;
-	}
+		if (num < 0)
+		{
+			_putchar('-');
+			length++;
+			num *= -1;
+		}
+		while (num > 0)
+		{
+			digit[i] = num % 10 + 48;
+			num /= 10;
+			i++;
+			length++;
+		}
 
-	while (i--)
-	{
-		_putchar(digit[i]);
+		while (i--)
+		{
+			_putchar(digit[i]);
+		}
 	}
 	return (length);
 }

@@ -26,5 +26,6 @@ int main(void)
     printf("Len:[%d]\n", len2);
     	printf("/%d/\n",_printf("tata")); 
 	_printf("%!\n");
+	printf("[%d]\n", 0);
 	return (0);
 }
