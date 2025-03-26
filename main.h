@@ -24,5 +24,6 @@ int printstring(va_list args);
 int printint(va_list args);
 int printdecimal(va_list args);
 int _printf(const char *format, ...);
+int get_function(const char *format, va_list args);
 
 #endif
