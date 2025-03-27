@@ -11,6 +11,10 @@
 int get_function(const char *format, va_list args)
 {
 	int i = 0, j, length = 0;
+	/* 
+	 * lists all the function in the repository to print arguments
+	 * and associate each of them with a particular id
+	 */
 	function_t function[] = {
 		{'c', printchar},
 		{'s', printstring},
@@ -20,14 +24,18 @@ int get_function(const char *format, va_list args)
 		{'\0', NULL}
 	};
 
-	while (format[i])
+	while (format[i]) /*reads argument*/
 	{
-		if (format[i] == '%')
+		if (format[i] == '%') /*checks the condition to "print" functions*/
 		{
 			if (format[i + 1] == '\0')
 				return (-1);
 			j = 0;
-			while (function[j].id)
+			while (function[j].id) 
+/**
+ * browses the list of functions until the corresponding 
+ * id is found, then calls the associated function
+ */
 			{
 				if (format[i + 1] == function[j].id)
 				{
@@ -37,7 +45,7 @@ int get_function(const char *format, va_list args)
 				}
 				j++;
 			}
-			if (function[j].id == '\0')
+			if (function[j].id == '\0') /* if there is no corresponding id, prints the string */
 			{
 				_putchar(format[i]), _putchar(format[i + 1]);
 				length += 2, i += 2;
