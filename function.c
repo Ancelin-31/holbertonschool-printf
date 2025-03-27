@@ -2,9 +2,9 @@
 #include "main.h"
 
 /**
- *printchar - function who's print only one char
- *@args: Keep arg to print
- *Return: no return
+ *printchar - function that prints only one character
+ *@args: Keeps arguments to print
+ *Return: 1 (length of printed argument)
 */
 
 int printchar(va_list args)
@@ -17,8 +17,8 @@ int printchar(va_list args)
 }
 
 /**
- *printstring - print if char * is called
- *@args: to fetch arg in parameter
+ *printstring - prints if char * is called
+ *@args: to fetch arguments in parameter
  *Return: length of string
 */
 
@@ -40,7 +40,7 @@ int printstring(va_list args)
 /**
  *printpercent - print % if is asked
  *@args: unused args to print %
- *Return: 1
+ *Return: 1 (length of argument)
  */
 
 int printpercent(__attribute__((unused))va_list args)
@@ -50,9 +50,9 @@ int printpercent(__attribute__((unused))va_list args)
 }
 
 /**
- *printint - print a integer
+ *printint - prints an integer if int is aked
  *@args: arguments keep to print is value
- *Return: size of args
+ *Return: length of arguments
  */
 
 int printint(va_list args)
@@ -62,13 +62,13 @@ int printint(va_list args)
 	int length = 0, i = 0;
 	char digit[10];
 	
-	if (num == 0)
+	if (num == 0) /* checks if num is NULL */
 	{
 		_putchar(48);
 		length++;
 		return (length);
 	}
-	if (num < 0)
+	if (num < 0) /* checks if num is negative */
 	{
 		_putchar('-');
 		length++;
