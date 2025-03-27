@@ -5,6 +5,7 @@ The `_printf` command uses multiple functions to handle several types of argumen
 in the form of a string and to print it in the standard output. User must specify the type of argument, using a special identifier character in this format : `%id`.
 
 | Identifier | Function | Stdout |
+| :-----:   |:--------- | :------|
 |%  |printpercent, prints a percent symbol  |%  |
 |%c |printcharacter, prints a simple character  |a, p, ...  |
 |%s |printstring, prints a string of character  |"Jeffrey"  |
