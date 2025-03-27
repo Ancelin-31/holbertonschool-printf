@@ -4,7 +4,7 @@
 /**
  *_printf - Basic functions of printf
  *@format: use to keep type of variable to print
- *Return: 0 if success
+ *Return: length of the string in bytes
  */
 
 int _printf(const char *format, ...)
@@ -15,10 +15,8 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 
-/**
- * initialization of arguments and format, executes the function
- * "get_function" and returns the size in bytes of the string
- */
+
+ /*initialization of arguments and format, executes the function get_function*/
 	va_start(args, format);
 
 	length = get_function(format, args);
