@@ -32,9 +32,18 @@ in the form of a string and to print it in the standard output. User must specif
 * va_arg
 
 ## Compilation
+Be sure to have all of these files :
+* \_puchar.c
+* function.c
+* get_function.c
+* \_printf.c
+* main.h
+
+Then execute the following command :
 ```
 $ gcc -Wal -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 ```
+## Code snippets
 ## Exemples
 ## Testing method
 ## Man printf
