@@ -9,12 +9,13 @@
 
 int _printf(const char *format, ...)
 {
-	va_list args;
+	va_list args; /* declares the va_list of arguments */
 	int length = 0;
 
 	if (format == NULL)
 		return (-1);
-	va_start(args, format);
+
+	va_start(args, format); /* initialization of arguments and format, executes the function "get_function" and returns the size in bytes of the string*/
 	length = get_function(format, args);
 	va_end(args);
 	return (length);

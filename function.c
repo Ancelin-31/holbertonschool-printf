@@ -12,7 +12,7 @@ int printchar(va_list args)
 	int c;
 
 	c = va_arg(args, int);
-	_putchar(c);
+	_putchar(c); /*prints the given character*/
 	return (1);
 }
 
@@ -29,9 +29,9 @@ int printstring(va_list args)
 
 	if (str == NULL)
 		str = "(null)";
-	while (*str)
+	while (*str) /*until *str == '\0'*/
 	{
-		_putchar(*str++);
+		_putchar(*str++); /*prints the string character by character*/
 		length++;
 	}
 	return (length);
@@ -60,8 +60,8 @@ int printint(va_list args)
 	int num = va_arg(args, int);
 	unsigned int abs;	/* to handle INT_MIN */
 	int length = 0, i = 0;
-	char digit[10];
-	
+	char digit[10];/*maximum size of a unsigned int*/
+
 	if (num == 0) /* checks if num is NULL */
 	{
 		_putchar(48);
@@ -77,14 +77,15 @@ int printint(va_list args)
 	else
 		abs = num;
 
-	while (abs > 0)
+	while (abs > 0) /*reads abs digit by digit, to put all of them 
+			  *in a buffer in reverse order*/
 	{
 		digit[i] = abs % 10 + 48;
 		abs /= 10;
 		i++;
 		length++;
 	}
-	while (i--)
+	while (i--) /*prints all digits, again in reverse order*/
 	{
 		_putchar(digit[i]);
 	}
