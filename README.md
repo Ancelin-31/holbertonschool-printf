@@ -1,7 +1,7 @@
 # Holbertonschool-Printf
 
 ## Description
-    The `_printf` command uses multiple functions to handle several types of arguments, allowing user to give almost any type of them
+The `_printf` command uses multiple functions to handle several types of arguments, allowing user to give almost any type of them
 in the form of a string and to print it in the standard output. User must specify the type of argument, using a special identifier character in this format : `%id`.
 
 ## Requierments
@@ -33,4 +33,4 @@ $ gcc -Wal -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 ## Man printf
 ## Flowchart
 ## Authors
-    This command has been written by Jeffrey BASSET and Ancelin CHEVALLIER.
+This command has been written by Jeffrey BASSET and Ancelin CHEVALLIER.
