@@ -2,12 +2,12 @@
 #include "main.h"
 
 /**
- *printbinary - convert and prints in binary an usigned int
+ *printunsigned - convert and prints in octal an usigned int
  *@args: arguments keep to print is value
  *Return: size of args
  */
 
-int printbinary(va_list args)
+int printunsigned(va_list args)
 {
 	unsigned int num = va_arg(args, int);
 	int length = 0, i = 0;
@@ -18,10 +18,10 @@ int printbinary(va_list args)
 		_putchar('0');
 		length++;
 	}
-	while (num > 0)		/*convert in binary in reverse*/
+	while (num > 0)		/*feed buffer in reverse*/
 	{
-		digit[i] = num % 2 + 48;
-		num /= 2;
+		digit[i] = num % 10 + 48;
+		num /= 10;
 		i++;
 		length++;
 	}
