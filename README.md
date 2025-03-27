@@ -16,13 +16,13 @@ in the form of a string and to print it in the standard output. User must specif
     * All the headers should be include guarded
 
 ## Authorized functions
-    * write
-    * malloc
-    * free
-    * va_start
-    * va_end
-    * va_copy
-    * va_arg
+* write
+* malloc
+* free
+* va_start
+* va_end
+* va_copy
+* va_arg
 
 ## Compilation
 ```
