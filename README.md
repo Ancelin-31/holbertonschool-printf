@@ -31,8 +31,8 @@ $ gcc -Wal -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 ## Exemples
 ## Testing method
 ## Man printf
-[!man_printf.png](https://github.com/Ancelin-31/holbertonschool-printf/blob/test/man_printf.png)
+(https://github.com/Ancelin-31/holbertonschool-printf/blob/test/man_printf.png)
 ## Flowchart
-[!flowchart.jpg](https://github.com/Ancelin-31/holbertonschool-printf/blob/test/flowchart.jpg)
+(https://github.com/Ancelin-31/holbertonschool-printf/blob/test/flowchart.jpg)
 ## Authors
 This command has been written by Jeffrey BASSET and Ancelin CHEVALLIER.
