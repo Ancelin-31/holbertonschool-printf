@@ -12,7 +12,7 @@ int get_function(const char *format, va_list args)
 {
 	int i = 0, j, length = 0;
 	function_t function[] = {
-		{'c', printchar},
+		{'c', printchar}, {'b', printbinary},
 		{'s', printstring},
 		{'%', printpercent},
 		{'i', printint},
