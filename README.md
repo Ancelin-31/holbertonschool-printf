@@ -4,6 +4,12 @@
 The `_printf` command uses multiple functions to handle several types of arguments, allowing user to give almost any type of them
 in the form of a string and to print it in the standard output. User must specify the type of argument, using a special identifier character in this format : `%id`.
 
+| Identifier | Function | Stdout |
+|%  |printpercent, prints a percent symbol  |%  |
+|%c |printcharacter, prints a simple character  |a, p, ...  |
+|%s |printstring, prints a string of character  |"Jeffrey"  |
+|%d, %i |printint, prints an integer    |42 |
+
 ## Requierments
     * Allowed editors: vi, vim, emacs
     * All files must be compiled on Ubuntu 20.04 using gcc
