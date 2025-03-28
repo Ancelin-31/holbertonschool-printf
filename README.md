@@ -123,7 +123,11 @@ int printstring(va_list args)
         return (length);
 }
 ```
-## Exemples
+## How to use
+header
+```
+#include "main.h" 
+```
 ## Testing method
 To test the \_printf function, you can add the following main.c to the compilation and run the given executable program
 ```
@@ -167,7 +171,7 @@ iddi1024iddiiddi
 -2147483648 + 2147483647 = -1
 111111111111111111111111111111111024 == 2000 == 400 == 400
 ## Man printf
-To read the man page, you can also use the command [man -l man_3_printf.3](https://github.com/Ancelin-31/holbertonschool-printf/blob/test/man_printf.png)
+To read the man page, you can also use the command ![man -l man_3_printf.3](https://github.com/Ancelin-31/holbertonschool-printf/blob/test/man_printf.png)
 ## ![Flowchart](https://github.com/Ancelin-31/holbertonschool-printf/blob/test/flowchart.jpg)
 ## Authors
 This command has been written by Jeffrey BASSET and Ancelin CHEVALLIER.
