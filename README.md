@@ -125,6 +125,47 @@ int printstring(va_list args)
 ```
 ## Exemples
 ## Testing method
+To test the \_printf function, you can add the following main.c to the compilation and run the given executable program
+```
+#include <limits.h>
+#include <stdio.h>
+#include "main.h"
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0
+ */
+int main(void)
+{
+	/* test %c %s %% and observe if there is a correct output */
+	 _printf("%c", 'S');
+	 _printf("%c", '\0');
+	 printf("css%ccs%scscscs", 'T', "Test");
+	 printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
+	 _printf("%%");
+	 _printf("%!\n");
+
+	 /* test %d %i */
+	 _printf("%d == %i\n", 1024, 1024);
+	 _printf("iddi%diddiiddi\n", 1024);
+	 _printf("%d + %d = %d\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
+
+	 /* test %b %o %u %x %X*/
+
+	 _printf("%b", UINT_MAX);
+	 _printf("%u == %o == %x == %X\n", 1024, 1024, 1024, 1024);
+	 
+    return (0);
+}
+```
+When executed, the program should print the following in the standard out :
+    ScssTcsTestcscscsLoading ... 99% Please wait
+    %%!
+    1024 == 1024
+    iddi1024iddiiddi
+    -2147483648 + 2147483647 = -1
+    111111111111111111111111111111111024 == 2000 == 400 == 400
 ## Man printf
 To read the man page, you can also use the command [man -l man_3_printf.3](https://github.com/Ancelin-31/holbertonschool-printf/blob/test/man_printf.png)
 ## [Flowchart](https://github.com/Ancelin-31/holbertonschool-printf/blob/test/flowchart.jpg)
