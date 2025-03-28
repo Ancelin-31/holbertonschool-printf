@@ -149,9 +149,6 @@ output :
 ```
 Hi ! My name is Alice, I'm 25 years old
 ```
-Memory allocation check
-
-![valgrind_printf](https://github.com/Ancelin-31/holbertonschool-printf/blob/Jeff/screen_valgrind.png)
 
 ## Testing method
 To test the \_printf function, you can add the following main.c to the compilation and run the given executable program
@@ -197,6 +194,8 @@ iddi1024iddiiddi
 -2147483648 + 2147483647 = -1
 111111111111111111111111111111111024 == 2000 == 400 == 400
 ```
+Memory allocation check
+![valgrind_printf](https://github.com/Ancelin-31/holbertonschool-printf/blob/Jeff/screen_valgrind.png)
 ## Man printf
 To read the man page, you can also use the command 
 ```man -l man_3_printf.3```
