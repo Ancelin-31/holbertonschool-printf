@@ -26,4 +26,8 @@ int printdecimal(va_list args);
 int _printf(const char *format, ...);
 int get_function(const char *format, va_list args);
 int printbinary(va_list args);
+int printoctal(va_list args);
+int printunsigned(va_list args);
+int print_hex_low(va_list args);
+int print_hex_upper(va_list args);
 #endif

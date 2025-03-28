@@ -11,7 +11,7 @@ in the form of a string and to print it in the standard output. User must specif
 |%s |printstring, prints a string of character  |"Jeffrey"  |
 |%d, %i |printint, prints an integer    |42 |
 
-## Requierments
+### Requierments
     * Allowed editors: vi, vim, emacs
     * All files must be compiled on Ubuntu 20.04 using gcc
     * All files should end with a new line
@@ -22,7 +22,7 @@ in the form of a string and to print it in the standard output. User must specif
     * Prototypes of all used functions must be included in an header file named main.h
     * All the headers should be include guarded
 
-## Authorized functions
+### Authorized functions
 * write
 * malloc
 * free
@@ -31,7 +31,7 @@ in the form of a string and to print it in the standard output. User must specif
 * va_copy
 * va_arg
 
-## Compilation
+### Compilation
 Be sure to have all of these files :
 * \_puchar.c
 * function.c
@@ -44,6 +44,85 @@ Then execute the following command :
 $ gcc -Wal -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 ```
 ## Code snippets
+Core file of the function, "\_printf.c"
+```
+ int _printf(const char *format, ...)
+{
+         va_list args; /* declares the va_list of arguments */
+         int length = 0;
+         if (format == NULL)
+                 return (-1);
+
+        va_start(args, format);
+
+        length = get_function(format, args);
+        va_end(args);
+        return (length);
+}
+```
+Function to find and execute the right "print", get_function.c
+
+```
+int get_function(const char *format, va_list args)
+{
+        int i = 0, j, length = 0;
+/* create a structure associating identifiers and print functions*/
+        function_t function[] = {
+                {'c', printchar}, {'b', printbinary},
+                {'s', printstring}, {'o', printoctal},
+                {'%', printpercent}, {'u', printunsigned},
+                {'i', printint}, {'x', print_hex_low},
+                {'d', printint}, {'X', print_hex_upper},
+                {'\0', NULL}
+        };
+        while (format[i]) /*reads argument*/
+        {
+                if (format[i] == '%') /*checks the condition to "print" functions*/
+                {
+                        if (format[i + 1] == '\0')
+                                return (-1);
+                        j = 0;
+                        while (function[j].id)
+/*browses the list of functions then calls the associated function*/
+                        {
+                                if (format[i + 1] == function[j].id)
+                                {
+                                        length += function[j].fptr(args);
+                                        i += 2;
+                                        break;
+                                }
+                                j++;
+                        }
+                        if (function[j].id == '\0') /* if no corresponding id, prints the string */
+                        {
+                                _putchar(format[i]), _putchar(format[i + 1]);
+                                length += 2, i += 2;                                                }
+                }
+                else
+                {
+                        _putchar(format[i]), i++, length++;
+                }
+        }
+        return (length);
+}
+```
+Exemple of one of the printf functions, printstring
+```
+int printstring(va_list args)
+{
+        char *str = va_arg(args, char *);
+        int length = 0;
+
+        if (str == NULL)
+                str = "(null)";
+        while (*str) /*until *str == '\0'*/
+        {
+                _putchar(*str++); /*prints the string character by character*/
+                length++;
+        }
+        return (length);
+}
+```
 ## Exemples
 ## Testing method
 ## Man printf

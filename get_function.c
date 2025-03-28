@@ -14,10 +14,10 @@ int get_function(const char *format, va_list args)
 /* create a structure associating identifiers and print functions*/
 	function_t function[] = {
 		{'c', printchar}, {'b', printbinary},
-		{'s', printstring},
-		{'%', printpercent},
-		{'i', printint},
-		{'d', printint},
+		{'s', printstring}, {'o', printoctal},
+		{'%', printpercent}, {'u', printunsigned},
+		{'i', printint}, {'x', print_hex_low},
+		{'d', printint}, {'X', print_hex_upper},
 		{'\0', NULL}
 	};
 	while (format[i]) /*reads argument*/
