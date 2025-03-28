@@ -44,8 +44,55 @@ Then execute the following command :
 $ gcc -Wal -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 ```
 ## Code snippets
+Core file of the function, "\_printf.c"
 ```
-int main
+ int _printf(const char *format, ...)
+{
+         va_list args; /* declares the va_list of arguments */
+         int length = 0;
+         if (format == NULL)
+                 return (-1);
+
+        va_start(args, format);
+
+        length = get_function(format, args);
+        va_end(args);
+        return (length);
+}
+```
+Function to find and execute the right "print", get_function.c
+
+```
+int get_function(const char *format, va_list args)
+ 12 {
+ 13         int i = 0, j, length = 0;
+ 14 /* create a structure associating identifiers and print functions*/
+ 15         function_t function[] = {
+ 16                 {'c', printchar}, {'b', printbinary},
+ 17                 {'s', printstring}, {'o', printoctal},
+ 18                 {'%', printpercent}, {'u', printunsigned},
+ 19                 {'i', printint}, {'x', print_hex_low},
+ 20                 {'d', printint}, {'X', print_hex_upper},
+ 21                 {'\0', NULL}
+ 22         };
+ 23         while (format[i]) /*reads argument*/
+ 24         {
+ 25                 if (format[i] == '%') /*checks the condition to "print"     functions*/
+ 26                 {
+ 27                         if (format[i + 1] == '\0')
+ 28                                 return (-1);
+ 29                         j = 0;
+ 30                         while (function[j].id)
+ 31                         {
+ 32                                 if (format[i + 1] == function[j].id)
+ 34                                 {
+ 35                                         length += function[j].fptr(args)    ;
+ 36                                         i += 2;
+ 37                                         break;
+ 38                                 }
+ 39                                 j++;
+ 40                         }
+ 41                         if (function[j].id == '\0')
 ```
 ## Exemples
 ## Testing method
