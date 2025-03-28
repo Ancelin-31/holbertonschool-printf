@@ -160,14 +160,14 @@ int main(void)
 }
 ```
 When executed, the program should print the following in the standard out :
-    ScssTcsTestcscscsLoading ... 99% Please wait
-    %%!
-    1024 == 1024
-    iddi1024iddiiddi
-    -2147483648 + 2147483647 = -1
-    111111111111111111111111111111111024 == 2000 == 400 == 400
+ScssTcsTestcscscsLoading ... 99% Please wait
+%%!
+1024 == 1024
+iddi1024iddiiddi
+-2147483648 + 2147483647 = -1
+111111111111111111111111111111111024 == 2000 == 400 == 400
 ## Man printf
 To read the man page, you can also use the command [man -l man_3_printf.3](https://github.com/Ancelin-31/holbertonschool-printf/blob/test/man_printf.png)
-## [Flowchart](https://github.com/Ancelin-31/holbertonschool-printf/blob/test/flowchart.jpg)
+## ![Flowchart](https://github.com/Ancelin-31/holbertonschool-printf/blob/test/flowchart.jpg)
 ## Authors
 This command has been written by Jeffrey BASSET and Ancelin CHEVALLIER.
