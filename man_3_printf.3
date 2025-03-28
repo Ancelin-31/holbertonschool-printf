@@ -32,26 +32,52 @@ Supported specifiers :
 .B %%
 	Print a %.
 
+.TP
+.B %b
+	Print a binary number.
+
+.TP
+.B %u
+	Prints an unsigned int.
+
+.TP
+.B %o
+	Prints an octal number.
+
+.TP
+.B %x
+	Prints an hexadecimal number in lowercase.
+
+.TP
+.B %X
+	Prints an hexadecimal number in uppercase.
+
 .SH EXEMPLE
 .EX
 #include "main.h"
 
-Int main(void)
+int main(void)
 {
 	char name[] = "Ancelin";
 	int age = 31;
 	
 	/* Exemple to print a string */
-	_printf("Hello ! We are %s and %s.\n", name, 'Jeffrey');
+	_printf("Hello ! We are %s and %s.\n", name, "Jeffrey");
 
 	/* Exemple to print a number */
 	_printf("We are respectively %d and %i.\n", age, 37);
 
 	/* Exemple to print a character and % */
-	_printf("We are %c%c-developer and we are at 200%%", 'C', 'o')
+	_printf("We are %c%c-developer and we are at 200%%.\n", 'C', 'o');
 
 	return (0);
 }
+.EE
+output :
+.EX
+ Hello ! We are Ancelin and Jeffrey.
+ We are respectively 31 and 37.
+ We are Co-developer and we are at 200%.
 .EE
 
 .SH AUTHORS

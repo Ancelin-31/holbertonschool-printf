@@ -9,8 +9,13 @@ in the form of a string and to print it in the standard output. User must specif
 |%  |printpercent, prints a percent symbol  |%  |
 |%c |printcharacter, prints a simple character  |a, p, ...  |
 |%s |printstring, prints a string of character  |"Jeffrey"  |
-|%d, %i |printint, prints an integer    |42 |
-
+|%d, %i |printint, prints an integer    |-42 |
+|%b |printbinary, prints a binary number    |1010   |
+|%u |printunsigned, prints an unsigned int  |42 |
+|%o |printoctal, prints an octal number    |52  |
+|%x |print_hex_low, prints an hexadecimal in lowercase  |2a |
+|%X |print_hex_upper, prints an hexadecimal in uppercase    |2A |
+ 
 ### Requierments
     * Allowed editors: vi, vim, emacs
     * All files must be compiled on Ubuntu 20.04 using gcc
@@ -189,7 +194,9 @@ iddi1024iddiiddi
 111111111111111111111111111111111024 == 2000 == 400 == 400
 ```
 ## Man printf
-To read the man page, you can also use the command ![man -l man_3_printf.3](https://github.com/Ancelin-31/holbertonschool-printf/blob/test/man_printf.png)
+To read the man page, you can also use the command 
+```man -l man_3_printf.3```
+![man_printf_3](https://github.com/Ancelin-31/holbertonschool-printf/blob/test/man_printf.png)
 ## ![Flowchart](https://github.com/Ancelin-31/holbertonschool-printf/blob/test/flowchart.jpg)
 ## Authors
 This command has been written by Jeffrey BASSET and Ancelin CHEVALLIER.
