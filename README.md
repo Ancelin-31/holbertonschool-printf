@@ -123,10 +123,26 @@ int printstring(va_list args)
         return (length);
 }
 ```
-## How to use
-header
+## Exemples
+Header :
 ```
-#include "main.h" 
+#include "main.h"
+```
+exemple :
+```
+int main(void)
+{
+    int age = 25;
+    char name[] = "Alice";
+
+    _printf("%c%c ! My name is %s, I'm %d years old\n", 'H', 'i', name, age);
+
+    return (0);
+}
+```
+output :
+```
+Hi ! My name is Alice, I'm 25 years old
 ```
 ## Testing method
 To test the \_printf function, you can add the following main.c to the compilation and run the given executable program
