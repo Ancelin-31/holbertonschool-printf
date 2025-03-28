@@ -11,7 +11,7 @@ in the form of a string and to print it in the standard output. User must specif
 |%s |printstring, prints a string of character  |"Jeffrey"  |
 |%d, %i |printint, prints an integer    |42 |
 
-## Requierments
+### Requierments
     * Allowed editors: vi, vim, emacs
     * All files must be compiled on Ubuntu 20.04 using gcc
     * All files should end with a new line
@@ -22,7 +22,7 @@ in the form of a string and to print it in the standard output. User must specif
     * Prototypes of all used functions must be included in an header file named main.h
     * All the headers should be include guarded
 
-## Authorized functions
+### Authorized functions
 * write
 * malloc
 * free
@@ -31,7 +31,7 @@ in the form of a string and to print it in the standard output. User must specif
 * va_copy
 * va_arg
 
-## Compilation
+### Compilation
 Be sure to have all of these files :
 * \_puchar.c
 * function.c
@@ -44,6 +44,9 @@ Then execute the following command :
 $ gcc -Wal -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 ```
 ## Code snippets
+```
+int main
+```
 ## Exemples
 ## Testing method
 ## Man printf
