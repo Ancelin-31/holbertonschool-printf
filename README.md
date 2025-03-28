@@ -64,35 +64,64 @@ Function to find and execute the right "print", get_function.c
 
 ```
 int get_function(const char *format, va_list args)
- 12 {
- 13         int i = 0, j, length = 0;
- 14 /* create a structure associating identifiers and print functions*/
- 15         function_t function[] = {
- 16                 {'c', printchar}, {'b', printbinary},
- 17                 {'s', printstring}, {'o', printoctal},
- 18                 {'%', printpercent}, {'u', printunsigned},
- 19                 {'i', printint}, {'x', print_hex_low},
- 20                 {'d', printint}, {'X', print_hex_upper},
- 21                 {'\0', NULL}
- 22         };
- 23         while (format[i]) /*reads argument*/
- 24         {
- 25                 if (format[i] == '%') /*checks the condition to "print"     functions*/
- 26                 {
- 27                         if (format[i + 1] == '\0')
- 28                                 return (-1);
- 29                         j = 0;
- 30                         while (function[j].id)
- 31                         {
- 32                                 if (format[i + 1] == function[j].id)
- 34                                 {
- 35                                         length += function[j].fptr(args)    ;
- 36                                         i += 2;
- 37                                         break;
- 38                                 }
- 39                                 j++;
- 40                         }
- 41                         if (function[j].id == '\0')
+{
+        int i = 0, j, length = 0;
+/* create a structure associating identifiers and print functions*/
+        function_t function[] = {
+                {'c', printchar}, {'b', printbinary},
+                {'s', printstring}, {'o', printoctal},
+                {'%', printpercent}, {'u', printunsigned},
+                {'i', printint}, {'x', print_hex_low},
+                {'d', printint}, {'X', print_hex_upper},
+                {'\0', NULL}
+        };
+        while (format[i]) /*reads argument*/
+        {
+                if (format[i] == '%') /*checks the condition to "print" functions*/
+                {
+                        if (format[i + 1] == '\0')
+                                return (-1);
+                        j = 0;
+                        while (function[j].id)
+/*browses the list of functions then calls the associated function*/
+                        {
+                                if (format[i + 1] == function[j].id)
+                                {
+                                        length += function[j].fptr(args);
+                                        i += 2;
+                                        break;
+                                }
+                                j++;
+                        }
+                        if (function[j].id == '\0') /* if no corresponding id, prints the string */
+                        {
+                                _putchar(format[i]), _putchar(format[i + 1]);
+                                length += 2, i += 2;                                                }
+                }
+                else
+                {
+                        _putchar(format[i]), i++, length++;
+                }
+        }
+        return (length);
+}
+```
+Exemple of one of the printf functions, printstring
+```
+int printstring(va_list args)
+{
+        char *str = va_arg(args, char *);
+        int length = 0;
+
+        if (str == NULL)
+                str = "(null)";
+        while (*str) /*until *str == '\0'*/
+        {
+                _putchar(*str++); /*prints the string character by character*/
+                length++;
+        }
+        return (length);
+}
 ```
 ## Exemples
 ## Testing method
