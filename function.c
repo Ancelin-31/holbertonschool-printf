@@ -77,7 +77,7 @@ int printint(va_list args)
 	else
 		abs = num;
 
-	while (abs > 0) 
+	while (abs > 0)
 /*reads abs digit by digit, to put all of them in a buffer in reverse order*/
 	{
 		digit[i] = abs % 10 + 48;

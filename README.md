@@ -149,6 +149,10 @@ output :
 ```
 Hi ! My name is Alice, I'm 25 years old
 ```
+Memory allocation check
+
+![valgrind_printf](https://github.com/Ancelin-31/holbertonschool-printf/blob/Jeff/screen_valgrind.png)
+
 ## Testing method
 To test the \_printf function, you can add the following main.c to the compilation and run the given executable program
 ```
